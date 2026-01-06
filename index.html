@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gloss Skills Academy - QCTO Accredited Online Courses</title>
+    <meta name="description" content="Study fully accredited online courses in Caregiving, Early Childhood Development, and Social Counselling. QCTO Accredited. NQF Levels 3-5.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #003056;
+            --coral: #E8716B;
+            --cream: #F5E6D3;
+            --orange: #FF9500;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--navy), #004080);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            width: 30px;
+            height: 25px;
+            background: var(--coral);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--coral);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--coral);
+        }
+
+        .apply-btn {
+            background: var(--coral);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(232, 113, 107, 0.3);
+            color: white;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: var(--navy);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(232, 113, 107, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .dots-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .qcto-badge {
+            display: inline-block;
+            background: var(--coral);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--coral);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(232, 113, 107, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-circle {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid var(--coral);
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-badge {
+            position: absolute;
+            background: white;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .badge-1 {
+            top: 10%;
+            right: -10px;
+            background: var(--orange);
+            color: white;
+            transform: rotate(10deg);
+        }
+
+        .badge-2 {
+            bottom: 15%;
+            left: -10px;
+            background: var(--cream);
+            color: var(--navy);
+            transform: rotate(-10deg);
+        }
+
+
+
+        /* Promo Banner */
+        .promo-banner {
+            background: var(--orange);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+        }
+
+        .promo-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .promo-banner h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .discount-tag {
+            display: inline-block;
+            background: var(--coral);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 20px;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            transform: rotate(-3deg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 6rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header span {
+            color: var(--coral);
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--navy);
+            margin: 1rem 0;
+            font-weight: 800;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .courses-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 48, 86, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 48, 86, 0.25);
+            border-color: var(--coral);
+        }
+
+        .course-number {
+            background: var(--cream);
+            padding: 3rem 2rem 2rem;
+            position: relative;
+        }
+
+        .number {
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--navy);
+            opacity: 0.1;
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .course-card h3 {
+            font-size: 1.8rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nqf-badge {
+            display: inline-block;
+            background: var(--coral);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .course-body {
+            padding: 2rem;
+        }
+
+        .course-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .course-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #555;
+        }
+
+        .course-features i {
+            color: var(--coral);
+            font-size: 1.2rem;
+        }
+
+        .course-apply-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .course-apply-btn:hover {
+            background: var(--coral);
+            transform: scale(1.05);
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .why-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .why-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 25px;
+            transition: transform 0.3s;
+        }
+
+        .why-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .why-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            background: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .why-item h3 {
+            color: var(--navy);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--navy);
+            color: white;
+            position: relative;
+        }
+
+
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--coral);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--coral);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form h3 {
+            color: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--coral);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--coral);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: var(--orange);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: #001a2e;
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--coral);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 2;
+        }
+
+        .footer-section a:hover {
+            color: var(--coral);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--orange);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 2rem 0 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 80px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s;
+                align-items: flex-start;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                padding: 3rem 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-circle {
+                max-width: 300px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .discount-tag {
+                font-size: 2rem;
+                padding: 0.75rem 2rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">Gloss Skills Academy</div>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="apply-btn">Apply Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="dots-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="qcto-badge">QCTO Accredited</span>
+                <h1>Transform Your Career with QCTO Courses</h1>
+                <p>Study online at your own pace. Gain nationally recognized qualifications in caregiving, early childhood development, and social counselling.</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn-primary">View Courses</a>
+                    <a href="#contact" class="btn-secondary">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-circle">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800" alt="Happy graduate">
+                </div>
+                <div class="floating-badge badge-1">100% Online</div>
+                <div class="floating-badge badge-2">NQF 3-5</div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="promo-content">
+            <h2>🎉 Early Bird Special 🎉</h2>
+            <div class="discount-tag">30% OFF</div>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">Register now and save! Limited time offer.</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="section-header">
+            <span>Our Courses</span>
+            <h2>QCTO Accredited Programs</h2>
+            <p>Choose from our range of professionally accredited courses designed to advance your career in healthcare and social services.</p>
+        </div>
+        <div class="courses-grid">
+            <!-- Course 1 -->
+            <div class="course-card">
+                <div class="course-number">
+                    <span class="number">1</span>
+                    <h3>Caregiver Course</h3>
+                    <span class="nqf-badge">NQF Level 3</span>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> QCTO Accredited</li>
+                        <li><i class="fas fa-laptop"></i> 100% Online Learning</li>
+                        <li><i class="fas fa-clock"></i> Study at Your Own Pace</li>
+                        <li><i class="fas fa-certificate"></i> National Qualification</li>
+                        <li><i class="fas fa-user-md"></i> Professional Care Skills</li>
+                        <li><i class="fas fa-headset"></i> Full Student Support</li>
+                    </ul>
+                    <button class="course-apply-btn" onclick="scrollToContact()">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <div class="course-number">
+                    <span class="number">2</span>
+                    <h3>Early Childhood Development</h3>
+                    <span class="nqf-badge">NQF Level 4</span>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> QCTO Accredited</li>
+                        <li><i class="fas fa-laptop"></i> 100% Online Learning</li>
+                        <li><i class="fas fa-clock"></i> Study at Your Own Pace</li>
+                        <li><i class="fas fa-certificate"></i> National Qualification</li>
+                        <li><i class="fas fa-child"></i> Child Development Focus</li>
+                        <li><i class="fas fa-headset"></i> Full Student Support</li>
+                    </ul>
+                    <button class="course-apply-btn" onclick="scrollToContact()">Apply Now</button>
+                </div>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card">
+                <div class="course-number">
+                    <span class="number">3</span>
+                    <h3>Social Counselling Worker</h3>
+                    <span class="nqf-badge">NQF Level 5</span>
+                </div>
+                <div class="course-body">
+                    <ul class="course-features">
+                        <li><i class="fas fa-check-circle"></i> QCTO Accredited</li>
+                        <li><i class="fas fa-laptop"></i> 100% Online Learning</li>
+                        <li><i class="fas fa-clock"></i> Study at Your Own Pace</li>
+                        <li><i class="fas fa-certificate"></i> National Qualification</li>
+                        <li><i class="fas fa-hands-helping"></i> Advanced Level Course</li>
+                        <li><i class="fas fa-headset"></i> Full Student Support</li>
+                    </ul>
+                    <button class="course-apply-btn" onclick="scrollToContact()">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose" id="about">
+        <div class="section-header">
+            <span>Why Choose Us</span>
+            <h2>Your Success is Our Priority</h2>
+            <p>We provide exceptional online learning experiences with full support throughout your journey.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>QCTO Accredited</h3>
+                <p>All courses are fully accredited, ensuring you receive nationally recognized qualifications.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-laptop-house"></i>
+                </div>
+                <h3>Online & Distance</h3>
+                <p>Study from anywhere, at any time. Perfect for working professionals and busy schedules.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Expert Support</h3>
+                <p>Dedicated support team and experienced instructors to guide you every step of the way.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Quality Education</h3>
+                <p>Comprehensive curriculum designed by industry experts for real-world application.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">Ready to start your learning journey? Contact us today and let's discuss how we can help you achieve your goals.</p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Our Location</h4>
+                        <p>Greater Durban, KwaZulu Natal<br>South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Call Us</h4>
+                        <p><a href="tel:+27840100102">+27 84 010 0102</a></p>
+                        <p><a href="tel:+27622918157">+27 62 291 8157</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/27840100102" target="_blank">Chat with us on WhatsApp</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:info@glossskillsacademy.co.za">info@glossskillsacademy.co.za</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email *" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Your Phone *" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message *" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Gloss Skills Academy</h3>
+                <p>Empowering learners through quality QCTO accredited online education in South Africa.</p>
+                <div class="social-links">
+                    <a href="https://wa.me/27840100102" class="social-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#courses">Courses</a></p>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Our Courses</h3>
+                <p>Caregiver Course - NQF 3</p>
+                <p>Early Childhood Development - NQF 4</p>
+                <p>Social Counselling Worker - NQF 5</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>+27 84 010 0102</p>
+                <p>+27 62 291 8157</p>
+                <p>info@glossskillsacademy.co.za</p>
+                <p>glossskillsacademy.co.za</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Gloss Skills Academy. All Rights Reserved. | QCTO Accredited Institution</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Smooth scroll helper
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your interest in Gloss Skills Academy! We will contact you shortly to discuss your application.');
+            event.target.reset();
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 48, 86, 0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe course cards
+        document.querySelectorAll('.course-card, .why-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
