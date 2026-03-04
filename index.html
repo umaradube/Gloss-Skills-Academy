@@ -992,6 +992,11 @@
             
             <div class="contact-form">
                 <h3>Send Us a Message</h3>
+                
+                <div id="successMessage" class="hidden opacity-0">
+                    <i class="fas fa-check-circle"></i> Message Sent Successfully! We will respond shortly.
+                </div>
+                
                 <form id="contact-form" action="https://formspree.io/f/mlgwpvwa" method="POST">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name *" required>
@@ -1005,7 +1010,9 @@
                     <div class="form-group">
                         <textarea name="message" rows="5" placeholder="Your Message *" required></textarea>
                     </div>
-                    <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                 </form>
             </div>
         </div>
@@ -1072,55 +1079,66 @@
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // 3. Formspree AJAX Submission Logic
+        
+        // =========================================================
+        // 🔑 ASYNCHRONOUS FORM SUBMISSION LOGIC (From contact.html)
+        // =========================================================
         const form = document.getElementById("contact-form");
         const submitBtn = document.getElementById("submit-btn");
+        const successMsg = document.getElementById("successMessage");
 
-        async function handleSubmit(event) {
-            event.preventDefault(); // Stop page refresh
-            
-            const data = new FormData(event.target);
-            
-            // Show sending status
-            submitBtn.innerText = "Sending...";
+        form.addEventListener("submit", async function(e) {
+            e.preventDefault(); // Stop page refresh
+
+            // Check browser's native validation
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return; 
+            }
+
+            // Start loading state
             submitBtn.disabled = true;
+            const originalBtnContent = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="spinner"></div> Sending...';
+            successMsg.classList.add('hidden', 'opacity-0');
 
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
+            // Gather form data
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+
                 if (response.ok) {
-                    // 1. Success Popup
-                    alert("Thank you! Your message has been sent successfully. We will contact you shortly.");
-                    
-                    // 2. Empty the form
-                    form.reset();
-                    
-                    // 3. Reset Button
-                    submitBtn.innerText = "Send Message";
+                    // SUCCESS:
+                    successMsg.classList.remove('hidden');
+                    setTimeout(() => { successMsg.classList.remove('opacity-0'); }, 10); 
+                    form.reset(); 
+
+                    // Re-enable button
                     submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
+                    
+                    // Hide message after a few seconds
+                    setTimeout(() => {
+                        successMsg.classList.add('opacity-0');
+                        setTimeout(() => { successMsg.classList.add('hidden'); }, 500);
+                    }, 5000);
+
                 } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert("Oops! There was a problem submitting your form.");
-                        }
-                        submitBtn.innerText = "Send Message";
-                        submitBtn.disabled = false;
-                    })
+                    alert('Oops! There was an error sending your message.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnContent;
                 }
-            }).catch(error => {
-                alert("Oops! There was a problem connecting to the server.");
-                submitBtn.innerText = "Send Message";
+            } catch (error) {
+                alert('A network error occurred. Please check your connection.');
                 submitBtn.disabled = false;
-            });
-        }
-        
-        form.addEventListener("submit", handleSubmit);
+                submitBtn.innerHTML = originalBtnContent;
+            }
+        });
     </script>
 </body>
 </html>
